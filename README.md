@@ -5,7 +5,7 @@ Home: https://github.com/kiwi0fruit/ipynb-py-convert
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Convert .py files runnable in VSCode/Python or Atom/Hydrogen to jupyter .ipynb notebooks and vice versa
 
