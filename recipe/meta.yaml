@@ -6,24 +6,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 06c09644f85949939fa749a00fb7f398a0bfcad0e34320ca6666e0cb44b7ea74
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - ipynb-py-convert = ipynb_py_convert.__main__:main
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
   run:
-    - python
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - ipynb_py_convert
 
